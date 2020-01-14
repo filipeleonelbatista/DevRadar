@@ -7,6 +7,8 @@ const app = express();
 mongoose.connect('mongodb+srv://filipeboficial:Pioneer47@cluster0-vnn8d.mongodb.net/week10?retryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
 })
 
 app.use(express.json());
