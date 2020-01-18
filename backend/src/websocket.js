@@ -26,12 +26,11 @@ exports.setupWebsocket = (server) => {
 exports.findConnections = (coordinates, techs) =>{
     return connections.filter(connection => {
         return calculateDistance(coordinates, connection.coordinates) < 10
-        && connection.techs.some(item => techs.inclusdes(item))
+        && connection.techs.some(item => techs.includes(item))
     });
 }
 
 exports.sendMessage = (to, message, data) => {
-    console.log("Opa!");
     to.forEach(connection => {
         io.to(connection.id).emit(message, data);
     });

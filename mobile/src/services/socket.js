@@ -5,7 +5,6 @@ const socket = socketio('http://192.168.1.176:3333', {
 
 function subscribeToNewDevs(subscribeFunction){
     socket.on('new-dev', subscribeFunction);
-    console.log(subscribeFunction);
 }
 
 function connect( latitude, longitude, techs){
@@ -16,9 +15,6 @@ function connect( latitude, longitude, techs){
     };
 
     socket.connect();
-    socket.on('messege', text => {
-        console.log(text);
-    });
 }
 
 
